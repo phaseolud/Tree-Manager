@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tree extends Model
+class Log extends Model
 {
     use HasFactory;
 
-    public function logs()
+    public function tree()
     {
-        return $this->hasMany(Log::class);
+        return $this->belongsTo(Tree::class);
     }
 }

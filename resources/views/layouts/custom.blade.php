@@ -19,7 +19,7 @@
 <body class="font-sans antialiased">
 <div class="w-full h-full min-h-screen">
     <!-- Page Content -->
-    <main class="container mx-auto p-2">
+    <main class="container mx-auto">
         {{ $slot }}
     </main>
 
