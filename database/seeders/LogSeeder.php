@@ -15,7 +15,7 @@ class LogSeeder extends Seeder
     public function run()
     {
         Log::create([
-            'log' => 'De wilg staat er goed bij! Af en toe treurig, maar vooral blij als zij een knot in heeft.',
+            'body' => 'De wilg staat er goed bij! Af en toe treurig, maar vooral blij als zij een knot in heeft.',
             'tree_id' => 1,
             'type' => 'ziek'
         ]);

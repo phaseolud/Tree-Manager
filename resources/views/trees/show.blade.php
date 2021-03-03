@@ -14,8 +14,9 @@
                 <p class="text-base text-gray-600">Oogstperiode: week {{ $tree['harvest_start_week'] . ' - ' . $tree['harvest_end_week'] }}</p>
             </div>
         </div>
-        <p>Geplant op: {{ $tree['planting_date'] }}</p>
-        <p>Onderstam: {{ $tree['rootstock'] }}</p>
+        <p>Geplant op: {{ \Carbon\Carbon::make($tree['planting_date'])->format('d-m-Y') }}</p>
+        @if($tree['species'])<p>Ras: {{$tree['species']}}</p> @endif
+        @if($tree['rootstock'])<p>Onderstam: {{ $tree['rootstock'] }}</p> @endif
         <div class="py-4">
             <p class="text-xl">Beschrijving</p>
             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore fugiat officiis qui rerum tenetur voluptates. Consequuntur, cumque distinctio dolorem et facilis fuga, inventore magnam nam porro quas quisquam repudiandae vero? </p>
@@ -46,7 +47,7 @@
             <form action="{{ route('logs.store') }}" method="POST">
                 @csrf
 
-                <textarea name="log" id="log" cols="30" rows="5" class="w-full border-none bg-gray-100 focus:ring-green-600" placeholder="Schrijf hier de log"></textarea>
+                <textarea name="body" id="body" cols="30" rows="5" class="w-full border-none bg-gray-100 focus:ring-green-600" placeholder="Schrijf hier de log"></textarea>
                 <input type="text" name="type" class="border-none bg-gray-100 focus:ring-green-600" placeholder="type log"/>
                 <input type="hidden" name="tree_id" value="{{ $tree['id'] }}">
                 <button type="submit" class="bg-green-700 text-white rounded-lg px-4 py-2 ml-2">Sla op</button>

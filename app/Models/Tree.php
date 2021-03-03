@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tree extends Model
 {
     use HasFactory;
-
+    protected $guarded = [];
     public function logs()
     {
         return $this->hasMany(Log::class);

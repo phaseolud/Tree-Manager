@@ -16,15 +16,19 @@ class CreateTreesTable extends Migration
         Schema::create('trees', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->string('name_latin');
+            $table->integer('number')->nullable();
+            $table->string('name')->nullable();
+            $table->string('species')->nullable();
+            $table->string('name_latin')->nullable();
             $table->string('rootstock')->nullable();
-            $table->date('planting_date');
-            $table->string('origin_from');
-            $table->integer('bloom_start_week');
-            $table->integer('bloom_end_week');
-            $table->integer('harvest_start_week');
-            $table->integer('harvest_end_week');
+            $table->date('planting_date')->nullable();
+            $table->string('origin_from')->nullable();
+            $table->integer('bloom_start_week')->nullable();
+            $table->integer('bloom_end_week')->nullable();
+            $table->integer('harvest_start_week')->nullable();
+            $table->integer('harvest_end_week')->nullable();
+            $table->text('body')->nullable();
+            $table->string('background_image')->nullable();
         });
     }
 

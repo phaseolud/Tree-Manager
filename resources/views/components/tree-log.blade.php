@@ -5,6 +5,6 @@
         <i class="fa fa-tree text-green-700"></i>
     </div>
     <p>
-        {{ $log['log'] }}
+        {{ $log['body'] }}
     </p>
 </div>
