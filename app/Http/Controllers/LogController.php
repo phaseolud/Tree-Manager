@@ -35,7 +35,24 @@ class LogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'log' => 'required',
+            'type' => 'required',
+            'tree_id' => 'required'
+        ]);
+
+        Log::create([
+            'log' => $request['log'],
+            'type' => $request['type'],
+            'tree_id' => $request['tree_id']
+        ]);
+
+        return redirect()->back();
+
+
+
+
+
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\TreeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/trees',[TreeController::class,'index'])->name('trees');
 Route::get('/trees/{tree}',[TreeController::class,'show'])->name('trees.show');
+Route::post('/logs',[LogController::class, 'store'])->name('logs.store');
+
 Route::get('/', function () {
     return view('welcome');
 });

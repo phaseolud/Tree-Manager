@@ -29,5 +29,28 @@
                 <x-tree-log :log="$log"/>
             @endforeach
         </div>
+
+
+        <div class="pt-4">
+
+            @if ($errors->any())
+                <div class="bg-red-300 border-red-500 px-2 py-1">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form action="{{ route('logs.store') }}" method="POST">
+                @csrf
+
+                <textarea name="log" id="log" cols="30" rows="5" class="w-full border-none bg-gray-100 focus:ring-green-600" placeholder="Schrijf hier de log"></textarea>
+                <input type="text" name="type" class="border-none bg-gray-100 focus:ring-green-600" placeholder="type log"/>
+                <input type="hidden" name="tree_id" value="{{ $tree['id'] }}">
+                <button type="submit" class="bg-green-700 text-white rounded-lg px-4 py-2 ml-2">Sla op</button>
+            </form>
+        </div>
     </div>
 </x-custom-layout>
