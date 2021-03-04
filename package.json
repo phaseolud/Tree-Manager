@@ -23,6 +23,9 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.2",
-        "@mdi/font": "^5.9.55"
+        "@mathewparet/instascan": "^1.0.4",
+        "@mdi/font": "^5.9.55",
+        "instascan": "^1.0.0",
+        "qr-scanner": "^1.2.0"
     }
 }

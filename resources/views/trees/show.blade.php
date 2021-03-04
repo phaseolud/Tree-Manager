@@ -19,8 +19,7 @@
         @if($tree['rootstock'])<p>Onderstam: {{ $tree['rootstock'] }}</p> @endif
         <div class="py-4">
             <p class="text-xl">Beschrijving</p>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore fugiat officiis qui rerum tenetur voluptates. Consequuntur, cumque distinctio dolorem et facilis fuga, inventore magnam nam porro quas quisquam repudiandae vero? </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur deleniti dolorem labore nihil quod similique vel. Atque, culpa distinctio dolore expedita fugit quaerat. Consequuntur, eaque error maxime mollitia suscipit vero.</p>
+            <p>{{$tree['body']}}</p>
         </div>
 
 

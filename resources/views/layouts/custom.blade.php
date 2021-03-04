@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
+    <script src="{!! mix('js/app.js') !!}"></script>
 </head>
 <body class="font-sans antialiased">
 <div class="w-full h-full min-h-screen">
@@ -28,6 +29,16 @@
             <a href="{{ route('trees') }}" class="w-full focus:text-green-500 hover:text-green-500 justify-center inline text-center pt-2 pb-2">
                 <i class="fa fa-2x fa-tree"></i>
                 <span class="block text-xs">Bomen</span>
+            </a>
+
+            <a href="{{route('qrscanner')}}" class="w-full focus:text-green-500 hover:text-green-500 justify-center inline text-center pt-2 pb-2">
+                <i class="fa fa-2x fa-qrcode"></i>
+                <span class="block text-xs">Scan</span>
+            </a>
+
+            <a href="{{ route('trees.create') }}" class="w-full focus:text-green-500 hover:text-green-500 justify-center inline text-center pt-2 pb-2">
+                <i class="fa fa-2x fa-plus"></i>
+                <span class="block text-xs">Voeg Toe</span>
             </a>
 
         </div>

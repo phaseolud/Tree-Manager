@@ -26,6 +26,12 @@ Route::post('/trees', [TreeController::class,'store'])->name('trees.store');
 
 Route::post('/logs',[LogController::class, 'store'])->name('logs.store');
 
+
+Route::get('/QR-scan', function () {
+    return view('qrscanner');
+})->name('qrscanner');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
