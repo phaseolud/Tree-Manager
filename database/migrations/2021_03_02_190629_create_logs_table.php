@@ -18,7 +18,6 @@ class CreateLogsTable extends Migration
             $table->timestamps();
             $table->string('body');
             $table->foreignId('tree_id')->constrained();
-            $table->string('type');
 
         });
     }

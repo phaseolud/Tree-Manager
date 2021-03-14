@@ -7,6 +7,9 @@
             <div>
                 <p class="text-3xl text-gray-800"> {{ $tree['name'] }}</p>
                 <p class="text-xl text-gray-700">{{ $tree['name_latin'] }}</p>
+                @if($tree['species'])<p>Ras: {{$tree['species']}}</p> @endif
+                @if($tree['rootstock'])<p>Onderstam: {{ $tree['rootstock'] }}</p> @endif
+
             </div>
 
             <div class="text-right">
@@ -15,8 +18,6 @@
             </div>
         </div>
         <p>Geplant op: {{ \Carbon\Carbon::make($tree['planting_date'])->format('d-m-Y') }}</p>
-        @if($tree['species'])<p>Ras: {{$tree['species']}}</p> @endif
-        @if($tree['rootstock'])<p>Onderstam: {{ $tree['rootstock'] }}</p> @endif
         <div class="py-4">
             <p class="text-xl">Beschrijving</p>
             <p>{{$tree['body']}}</p>
@@ -47,7 +48,6 @@
                 @csrf
 
                 <textarea name="body" id="body" cols="30" rows="5" class="w-full border-none bg-gray-100 focus:ring-green-600" placeholder="Schrijf hier de log"></textarea>
-                <input type="text" name="type" class="border-none bg-gray-100 focus:ring-green-600" placeholder="type log"/>
                 <input type="hidden" name="tree_id" value="{{ $tree['id'] }}">
                 <button type="submit" class="bg-green-700 text-white rounded-lg px-4 py-2 ml-2">Sla op</button>
             </form>

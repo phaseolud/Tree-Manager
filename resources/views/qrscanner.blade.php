@@ -5,7 +5,8 @@
         </div>
         <b>Gedetecteerde QR code: </b>
         <span id="cam-qr-result">None</span>
-        <br></div>
+        <br>
+    </div>
     <script type="module">
         import QrScanner from '/js/qr-scanner.min.js';
         QrScanner.WORKER_PATH = '/js/qr-scanner-worker.min.js';

@@ -37,13 +37,11 @@ class LogController extends Controller
     {
         $validated = $request->validate([
             'body' => 'required',
-            'type' => 'required',
             'tree_id' => 'required'
         ]);
 
         Log::create([
             'body' => $request['body'],
-            'type' => $request['type'],
             'tree_id' => $request['tree_id']
         ]);
 
